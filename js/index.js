@@ -30,7 +30,7 @@ messageForm.addEventListener('submit', (event) => {
     var messageSection=document.querySelector('#messages')
     var messageList=messageSection.querySelector('ul')
     var newMessage=document.createElement('li')
-    //Is there a better way to put a space between the message and button?
+    //Is there a better way to put a space between the message and button
     newMessage.innerHTML=`<a href=mailto:${emailInput}>${nameInput} wrote: </a><br><span>${messageInput} </span>`
     var removeButton=document.createElement('button')
     removeButton.innerHTML='remove'
