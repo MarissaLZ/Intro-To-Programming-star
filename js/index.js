@@ -8,7 +8,7 @@ copyright.innerHTML='Marissa Lazo ' + thisYear;
 footer.append(copyright);
 
 //lists skills section
-var skills = ["Python", "JavaScript", "Java"];
+var skills = ["Python", "JavaScript", "Java", "GitHub"];
 var skillsSelection=document.querySelector('#skills');
 var skillsList=skillsSelection.querySelector('ul');
 
@@ -33,7 +33,7 @@ messageForm.addEventListener('submit', (event) => {
     //Is there a better way to put a space between the message and button
     newMessage.innerHTML=`<a href=mailto:${emailInput}>${nameInput} wrote: </a><br><span>${messageInput} </span>`
     var removeButton=document.createElement('button')
-    removeButton.innerHTML='remove'
+    removeButton.innerHTML='Remove'
     removeButton.type='button'
     
     removeButton.addEventListener('click', (event) => {
