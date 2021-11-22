@@ -1,43 +1,43 @@
 //displays copyright
-var today = new Date();
-var thisYear = today.getFullYear();
+let today = new Date();
+let thisYear = today.getFullYear();
 //use querySelector to access by tag name
-var footer=document.querySelector('footer');
-var copyright=document.createElement('p')
-copyright.innerHTML='Marissa Lazo ' + thisYear;
+let footer=document.querySelector('footer');
+let copyright=document.createElement('p')
+copyright.innerHTML= '&copy Marissa Lazo ' + thisYear;
 footer.append(copyright);
 
 //lists skills section
-var skills = ["Python", "JavaScript", "Java", "GitHub"];
-var skillsSelection=document.querySelector('#skills');
-var skillsList=skillsSelection.querySelector('ul');
+let skills = ["HTML", "CSS", "JS" ,"Python", "Java", "GitHub"];
+let skillsSelection=document.querySelector('#skills');
+let skillsList=skillsSelection.querySelector('ul');
 
 for (let i in skills) {
-    var skill=document.createElement('li')
+    let skill=document.createElement('li')
     skill.innerHTML=skills[i];
     skillsList.append(skill) ;
 }
 //Message form
 //note .value gives us the value attribute. Once there is user input the element has a value attribute
-var messageForm=document.querySelector('form')
+let messageForm=document.querySelector('form')
 messageForm.addEventListener('submit', (event) => {
     event.preventDefault(); //use messageForm?
-    var nameInput=event.target.name.value; 
-    var emailInput=event.target.mail.value; //how is this being accesed? by id? works w/email
-    var messageInput=event.target.message.value;
+    let nameInput=event.target.name.value; 
+    let emailInput=event.target.mail.value; //how is this being accesed? by id? works w/email
+    let messageInput=event.target.message.value;
     console.log(`${nameInput} ${emailInput} ${messageInput}`)
 
-    var messageSection=document.querySelector('#messages')
-    var messageList=messageSection.querySelector('ul')
-    var newMessage=document.createElement('li')
-    //Is there a better way to put a space between the message and button
+    let messageSection=document.querySelector('#messages')
+    let messageList=messageSection.querySelector('ul')
+    let newMessage=document.createElement('li')
+    
     newMessage.innerHTML=`<a href=mailto:${emailInput}>${nameInput} wrote: </a><br><span>${messageInput} </span>`
-    var removeButton=document.createElement('button')
+    let removeButton=document.createElement('button')
     removeButton.innerHTML='Remove'
     removeButton.type='button'
     
     removeButton.addEventListener('click', (event) => {
-        var entry=removeButton.parentNode
+        let entry=removeButton.parentNode
         entry.remove()
     });
     newMessage.appendChild(removeButton)

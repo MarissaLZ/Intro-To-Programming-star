@@ -1,80 +1,207 @@
 *, *:before, *:after {
     box-sizing: border-box;
   }
-/*{ border: 2px solid green;
-}*/
+* {      
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+html {
+    font-size: 18px;
+    height:100%;
+}
 
 body {
-    /*max-width: 600px;*/
-    margin: 20px ; 
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    line-height: 1.5;
+    min-height: 100%;
+    align-items: center;
     background-color: rgba(124, 113, 226, 0.877);
     font-family: "Times New Roman", sans-serif; 
     color: black;
-    border: 2px solid white; /* does this get inherited?*/
+    overflow-x: hidden;
 }
-form {
-    font-size:20px;
-    background-color:white;
-    border: 2px solid black;
-    width: 400px;
-    height: auto;
+
+ header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem; 
+    background-color: purple; 
+    width:100%;
+    height: 5rem;
+    padding: 0 3rem;
+
+ }
+ .container{ 
+    width: 90vw;
+    max-width: 1024px;
+    margin: 0 auto;
+
 }
-h1{
-    font-size: 20px;
+ header ul {
+     display: flex;
+     gap: 1rem;
+ }
+
+h1 {
     font-weight:bold;
-    border: 1px solid black;
-    width: 400px;
-    height: auto;
- } 
-h2{
-    font-size: 20px;
+    color: #F8F9F6;
+    font-size: 1.5rem;
+ }
+ #about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 0.5rem;
 }
-ul {
-    list-style-type: none;
+ p{
+    width: 40rem;
+ }
+img{
+    width: 139px;
+    height: 150px;
+    border-radius: 50%;
+}
+#skills {
+    margin-bottom:2rem ;
+}
+
+#skills h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    background-color: purple;
+    min-width: 100vw;
+    height: 4rem;
+}
+#skills ul {
+    display: flex;
+    justify-content: space-between;
+
+ 
 }
 #skills ul li {
-    display: inline;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 10px;
+    background-color: purple;
+     border-radius: 0.25rem;
+     padding: 0.25rem 1rem;
 }
-/* is this the best way to line up list items horizontally on the same line?*/
-/* #connect li{
-    display: inline;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 10px;
-} Does the html override this?*/ 
 
+#projects h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 0;
+    background-color: purple;
+    min-width: 100vw;
+    height: 4rem;
+}
+
+.grid--projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 38rem;
+    border-radius: 0.20rem;
+    gap: 2rem;
+}
+.project{
+    background-color: #F8F9F6;
+}
+
+#leave_message_container h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    background-color: purple;
+    min-width: 100vw;
+    height: 4rem;
+    margin: 3rem 0;
+}
+form {
+    font-size: 1rem;
+    background-color: #F8F9F6;
+    border-radius: 0.20rem;;
+    margin: 0 auto; /*centers container*/
+    width: 40rem;
+    height: 24rem;
+    padding: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(1fr,7);
+}
 input{
-    display: block;
-    height: 30px;
-    width: 200px;
+    grid-column: 1/2;
 }
 button {
     font-weight: bold;
     cursor: pointer;
+    grid-column: 2/3;
+    gap: 1rem;
 }
 #messages button {
-    margin: 5px 0px 5px 400px ;
+    margin: 5px 0px
+     5px 400px ;
 }
+
+#messages h2{
+    text-align: center;
+    margin: 2rem 0;
+}
+
 /*changes color of messages*/
 #messages ul {
-    background-color: lightblue;
-    border: 2px solid black;
+    background-color: #F8F9F6;
+    border-radius: 0.2rem;
     width: 600px;
+    margin-bottom: 2rem;
+    margin: 0 auto; /*centers container*/
+
+    min-width: 10rem;
+    min-height: 10rem;
 }
-/*can i combine this?*/
-input:focus{
+
+footer {
+    background-color: purple;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items:center;
+    height:5rem;
+    width: 100%;
+    padding: 0rem 3rem;
+}
+footer ul {
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+    /*can use gap on the ul container to add space between the li items. Appears best*/  
+}
+/* an alternative to using gap to add space between the the il elements (icons).
+ Margins got weird. Padding is better. Best seems to be gap*/
+
+
+a:link, a:visited,  a:hover, a:active {
+    color:#F8F9F6;
+    text-decoration: none;
+}
+input:focus, textarea:focus, button:focus {
     background-color: lightblue;
     outline: 1px solid royalblue;
 }
-textarea:focus{
-    background-color: lightblue;
-    outline: 1px solid royalblue;
-}
-button:focus{
-    outline: 1px solid royalblue;  
-}
+/* media queries usually at bottom*/
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 14px;
+    }
+    body {
+      background-color: lightblue;
+    }
+  }
 
 /* css reset ensures that your css looks the same on all browsers
