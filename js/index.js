@@ -46,31 +46,22 @@ messageForm.addEventListener('submit', (event) => {
     messageForm.reset();
 });
 
-//xhr request
-var githubRequest = new XMLHttpRequest();
-githubRequest.open("GET","https://api.github.com/users/MarissaLZ/repos" ,true);
-githubRequest.send();
+//fetch request
+//returns a promise
 
+fetch("https://api.github.com/users/MarissaLZ/repos")
+.then(response=> response.json())
+.then(function(data) {
+    var projectList = document.getElementById("projects").querySelector("ul")
+    console.log(data)
 
-githubRequest.onload = function(event) {
-    //check HTTP status
-    if (githubRequest.status == 200) {
-        //an array of objects
-        var repositories = JSON.parse(githubRequest.responseText);
-        console.log(repositories)
-
-      
-        var projectList = document.getElementById("projects").querySelector("ul")
-
-        for (i in repositories) {
+        for (i in data) {
             var link = document.createElement("a")
-            link.setAttribute("href",repositories[i].html_url);
+            link.setAttribute("href",data[i].html_url);
             link.setAttribute("target", "blank")
-            link.innerHTML = repositories[i].name;
+            link.innerHTML = data[i].name;
             var project = document.createElement("li");
             project.appendChild(link)
             projectList.appendChild(project)
         }
-    }
-
-}
+    })
