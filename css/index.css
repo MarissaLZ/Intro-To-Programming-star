@@ -19,7 +19,7 @@ body {
     line-height: 1.5;
     min-height: 100%;
     align-items: center;
-    background-color: rgba(124, 113, 226, 0.877);
+    background-color: rgb(255, 252, 250);
     font-family: "Times New Roman", sans-serif; 
     color: black;
     overflow-x: hidden;
@@ -30,17 +30,18 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3rem; 
-    background-color: purple; 
+    background-color: rgb(78, 25, 146);
     width: 100%;
     height: 5rem;
     padding: 0 3rem;
 
  }
+ .navBar:hover{
+     color:rgb(35, 196, 236); 
+ }
  .container { 
-    width: 90vw;
-    max-width: 1024px;
+    width: 60vw;
     margin: 0 auto;
-
 }
  header ul {
      display: flex;
@@ -52,103 +53,176 @@ h1 {
     color: #F8F9F6;
     font-size: 1.5rem;
  }
- #about {
+
+ #bio {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 0.5rem;
+    gap: 4rem;
 }
- p {
-    width: 40rem;
+
+ #bio p {
+    max-width: 40rem;
  }
+
 img {
     width: 139px;
     height: 150px;
     border-radius: 50%;
-}
-#skills {
-    margin-bottom:2rem ;
 }
 
 #skills h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3rem 0;
-    background-color: purple;
+    margin: 4rem 0;
+    background-color:rgb(78, 25, 146);
     min-width: 100vw;
     height: 4rem;
 }
+
 #skills ul {
     display: flex;
-    justify-content: space-between;
- 
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 #skills ul li {
-    background-color: purple;
-     border-radius: 0.25rem;
-     padding: 0.25rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
+    width: 4rem;
+}
+
+#experience h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 0;
+    background-color: rgb(78, 25, 146);
+    min-width: 100vw;
+    height: 4rem;
+}
+
+#grid--experience {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
+    row-gap: 2rem;
+}
+
+#grid--experience li {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e8e9e8;
+    border-radius: 0.25rem;   
+}
+
+#grid--experience li p {
+    padding: 0.25rem 1rem;
 }
 
 #projects h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 3rem 0;
-    background-color: purple;
+    margin: 4rem 0;
+    background-color: #4e1992;
     min-width: 100vw;
     height: 4rem;
+}
+
+.projectTags {
+    color:black;
+}
+
+.grid--projects a:hover{
+    background-color:rgb(35, 196, 236); 
+}
+
+h3{
+    font-size: 20px;
 }
 
 .grid--projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    height: 38rem;
-    border-radius: 0.20rem;
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr; 
     gap: 2rem;
 }
-.grid--projects li {
-    background-color: #F8F9F6;
-} 
-.grid--projects li a {
-        color: black;
+
+.grid--projects a {
+    background-color: #e8e9e8;
+    border-radius: 0.25rem;
+    border: 0.1rem solid  black;
 }
+
+.grid--projects li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 1rem;
+    height:100%;
+} 
 
 #leave_message_container h1 {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
-    background-color: purple;
+    background-color: rgb(78, 25, 146);
     min-width: 100vw;
     height: 4rem;
-    margin: 3rem 0;
+    margin: 4rem 0;
 }
+
 form {
     font-size: 1rem;
-    background-color: #F8F9F6;
-    border-radius: 0.20rem;;
+    background-color: #e8e9e8;
+    border: 0.1rem solid  black;
+    border-radius: 0.25rem;
     margin: 0 auto; /*centers container*/
-    width: 40rem;
-    height: 24rem;
-    padding: 1rem 1rem;
+    height: 20rem;
+    max-width: 35rem;
+    padding: 0.5rem;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(1fr,7);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    align-items: end;
 }
-input {
+
+label {
     grid-column: 1/2;
+    padding-bottom: 0.2rem;
 }
-button {
-    font-weight: bold;
+
+input {
+    grid-column: 1/3;
+    height: 2rem;
+    align-self: start;  
+}
+
+textarea {
+    grid-column: 1/4;
+    grid-row: 6/8 ;
+    height: 100%;
+}
+
+form button {
     cursor: pointer;
-    grid-column: 2/3;
-    gap: 1rem;
-}
-#messages button {
-    margin: 5px 0px
-     5px 400px ;
+    grid-column: 1/2;
+    grid-row: 8/9;
+    margin-top: 1rem;
+    height: 2rem;
+    width: 6rem;   
 }
 
 #messages h2 {
@@ -158,18 +232,39 @@ button {
 
 /*changes color of messages*/
 #messages ul {
-    background-color: #F8F9F6;
+    background-color: #e8e9e8;
+    border: 0.1rem solid  black;
     border-radius: 0.2rem;
-    width: 600px;
-    margin-bottom: 2rem;
+    max-width: 35rem;
     margin: 0 auto; /*centers container*/
-
+    margin-bottom: 5rem;
+    padding: 0.5rem;
     min-width: 10rem;
-    min-height: 10rem;
+    min-height: 10rem;   
+}
+
+#messages ul li {
+    margin-bottom: 1.5rem;
+}
+
+#messages ul li span{
+    color:white;
+    background-color: rgb(35, 196, 236);
+    border-radius: 0.3rem;
+    margin: 0.25rem 0;
+    padding: 0.15rem;
+    display: block;
+    word-wrap: break-word;
+    max-width: 90%;
+}
+
+#messages button {
+    cursor: pointer;
+    padding: 0.15rem;
 }
 
 footer {
-    background-color: purple;
+    background-color: rgb(78, 25, 146);
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -182,28 +277,53 @@ footer ul {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    /*can use gap on the ul container to add space between the li items. Appears best*/  
 }
-/* an alternative to using gap to add space between the the il elements (icons).
- Margins got weird. Padding is better. Best seems to be gap*/
 
+footer p {
+    color: #F8F9F6;
+}
 
-a:link, a:visited,  a:hover, a:active {
+#bio a:link, #bio a:visited,  #bio a:hover, #bio a:active {
+    color: black;
+    text-decoration: underline;   
+}
+
+nav a:link, nav a:visited, nav a:active {
     color: #F8F9F6;
     text-decoration: none;
 }
+
 input:focus, textarea:focus, button:focus {
     background-color: lightblue;
     outline: 1px solid royalblue;
 }
+
 /* media queries usually at bottom*/
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     html {
         font-size: 14px;
     }
-    body {
-      background-color: lightblue;
+    header{
+        flex-direction: column;
+    }
+
+    #skills ul{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+  
+    #bio {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .grid--projects {
+        grid-template-columns: 1fr;
+
     }
   }
-
 /* css reset ensures that your css looks the same on all browsers
